@@ -1,8 +1,8 @@
 <?php 
   $host = 'localhost';
-  $db = 'ecommerce';
-  $user = 'root';
-  $pass = '';
+  $db = 'db_caes22075ti';
+  $user = 'caes22075ti';
+  $pass = '16710110222075';
   $charset='utf8mb4';
 
   $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
@@ -14,5 +14,3 @@
   ];
 
   $dbh =  new PDO($dsn,$user,$pass,$opt);
-
-?>
