@@ -1,8 +1,8 @@
 <?php 
   $host = 'localhost';
-  $db = 'db_caes22075ti';
-  $user = 'caes22075ti';
-  $pass = '16710110222075';
+  $db = 'ecommerce';
+  $user = 'root';
+  $pass = '';
   $charset='utf8mb4';
 
   $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
