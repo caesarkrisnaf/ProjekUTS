@@ -39,9 +39,9 @@ $rs = $dbh->query($query)
                                             <td><?= $r['jenis_produk'] ?></td>
                                             <td><?= "<img src='content/admin/produk/$r[foto]' width='120' height='80' />"; ?></td>
                                             <td>
-                                                <a class="btn btn-primary" href="index.php?page/admin=edit_produk&id=<?= $r['id'] ?>"><span class="fa fa-trash"></a>
+                                                <a class="btn btn-primary" href="index.php?page/admin=edit_produk&id=<?= $r['id'] ?>"><span class="fa fa-edit"></a>
                                                 <a onclick="return confirm('Apakah yakin data akan di hapus?')" href="content/admin/produk/delete.php?id=<?php echo $r['id']; ?>" class="btn btn-danger btn-md"><span class="fa fa-trash"></span></a>
-                                                <a class="btn btn-primary" href="index.php?page/admin=detail_produk&id=<?= $r['id'] ?>"><span class="fa fa-trash"></a>
+                                                <a class="btn btn-primary" href="index.php?page/admin=detail_produk&id=<?= $r['id'] ?>"><span class="fa fa-info-circle"></a>
                                             </td>
                                         </tr>
                                     <?php $nomor++;

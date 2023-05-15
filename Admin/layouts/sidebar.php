@@ -9,7 +9,7 @@ $menus = [
 ];
 
 $icons = [
-    'Dashboard' => 'fa-tachometer-alt',
+    'Dashboard' => 'fa fa-dashboard',
     'Pelanggan' => 'fa-list-alt',
     'Produk' => 'fa-list-alt',
     'Jenis Produk' => 'fa-list-alt',

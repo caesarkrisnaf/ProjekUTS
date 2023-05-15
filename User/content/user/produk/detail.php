@@ -1,14 +1,13 @@
 <?php
 require_once '../../../../koneksi.php';
 
-$sql = "SELECT p.id, p.nama_produk,p.qty, p.tanggal, p.total_harga, p.nama_pemesan, p.alamat_pemesan, j.foto as foto_produk
-FROM pesanan p left join produk j ON j.id = p.id_produk";
-$rs = $dbh->query($sql);
+$id = $_GET['id'];
+$sql = "SELECT p.id, p.nama_produk,p.qty, p.tanggal ,p.total_harga, p.nama_pemesan, p.alamat_pemesan, j.foto as foto_produk
+FROM pesanan p left join produk j ON j.id = p.id_produk WHERE p.id = ?";
 
-
-
-$nomor = 0;
-foreach ($rs as $r) {
+$r = $dbh->prepare($sql);
+$r->execute(array($id));
+$hasil = $r->fetch();
 ?>
 
 
@@ -61,37 +60,38 @@ foreach ($rs as $r) {
                         <tbody>
                             <tr>
                                 <td>
-                                    <?= "<img src='../../../../Admin/content/admin/produk/$r[foto_produk]' width='120' height='70' />"; ?>
+                                    <?= "<img src='../../../../Admin/content/admin/produk/$hasil[foto_produk]' width='120' height='70' />"; ?>
                                 </td>
                                 <td>
-                                    <?= $r['nama_produk'] ?>
+                                    <?= $hasil['nama_produk'] ?>
                                 </td>
                                 <td>
-                                    <?= $r['qty'] ?>
+                                    <?= $hasil['qty'] ?>
                                 </td>
                                 <td>
-                                    <?= $r['tanggal'] ?>
+                                    <?= $hasil['tanggal'] ?>
                                 </td>
                                 <td>
-                                    <?= $r['nama_pemesan'] ?>
+                                    <?= $hasil['nama_pemesan'] ?>
                                 </td>
                                 <td>
-                                    <?= $r['alamat_pemesan'] ?>
+                                    <?= $hasil['alamat_pemesan'] ?>
                                 </td>
                             </tr>
-
+                   
                         </tbody>
                     </table>
+                    <a href="index.php">Kembali</a>
                 </div>
             </div>
         </div>
-
+      
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
     </body>
-<?php } ?>
+
 
     </html>

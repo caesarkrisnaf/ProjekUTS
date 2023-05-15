@@ -32,9 +32,9 @@ $rs = $dbh->query($sql);
                                             <td><?= $r['qty']; ?></td>
                                             <td><?= "<img src='content/admin/produk/$r[foto_produk]' width='120' height='80' />"; ?></td>
                                             <td>
-                                                <a class="btn btn-primary" href="index.php?page/admin=edit_jenis_produk&id=<?= $r['id']; ?>">Edit</a>
+                                                <a class="btn btn-primary" href="index.php?page/admin=edit_jenis_produk&id=<?= $r['id']; ?>"><span class="fa fa-edit" title="edit"></span></a>
                                                 <a onclick="return confirm('Apakah yakin data akan di hapus?')" href="content/admin/pemesan/delete.php?id=<?php echo $r['id']; ?>" class="btn btn-danger btn-md"><span class="fa fa-trash"></span></a>
-                                                <a class="btn btn-primary" href="index.php?page/admin=detail_pemesan&id=<?= $r['id'] ?>"><span class="fa fa-trash"></a>
+                                                <a class="btn btn-primary" href="index.php?page/admin=detail_pemesan&id=<?= $r['id'] ?>"><span class="fa fa-info-circle" title="detail"></span></a>
                                             </td>
 
                                             </td>

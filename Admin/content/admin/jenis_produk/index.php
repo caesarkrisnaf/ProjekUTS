@@ -30,7 +30,7 @@ $rs = $dbh->query($sql);
                                             <td class="sorting_1"><?= $nomor; ?></td>
                                             <td><?= $r['nama']; ?></td>
                                             <td>
-                                                <a class="btn btn-primary" href="index.php?page/admin=edit_jenis_produk&id=<?= $r['id']; ?>">Edit</a>
+                                                <a class="btn btn-primary" href="index.php?page/admin=edit_jenis_produk&id=<?= $r['id']; ?>"><span class="fa fa-edit" title="Edit"></span></a>
                                                 <a onclick="return confirm('Apakah yakin data akan di hapus?')" href="content/admin/jenis_produk/delete.php?id=<?php echo $r['id']; ?>" class="btn btn-danger btn-md"><span class="fa fa-trash"></span></a>
 
                                             </td>

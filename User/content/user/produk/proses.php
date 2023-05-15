@@ -24,7 +24,13 @@ if (isset($sql)) {
     $st->execute($ar_data);
 }
 
+$query ="SELECT * FROM pesanan ORDER by id DESC limit 1";
+
+$result = $dbh->query($query);
+$hasil = $result->fetch();
+
+
 echo ("<script LANGUAGE='JavaScript'>
     window.alert('Anda Berhasil Memesan');
-    window.location.href='../../../index.php';
+    window.location.href='detail.php?id=$hasil[id]';
     </script>");
